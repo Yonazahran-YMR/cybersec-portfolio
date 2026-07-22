@@ -25,7 +25,7 @@ Started from pre-5th-semester IT student — Java, SQL, data mining foundation. 
 - 🔲 Google Cybersecurity Certificate (Coursera, applying for financial aid)
 
 ## Progress Log
-- ✅ Wireshark: packet structure, OSI layer mapping, TCP handshake/teardown, DNS resolution
+- ✅ DNS: query/response structure, transaction IDs, CNAME chains, UDP vs TCP, security implications (tunneling, spoofing)
 - 🔲 Subnetting/CIDR
 - 🔲 CompTIA Security+ prep
 
