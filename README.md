@@ -3,7 +3,7 @@
 Documenting my path  in cybersecurity from zero to professional (Blue Team/SOC focus).
 
 ## Background
-Started from pre-5th-semester IT student — Java, SQL, data mining foundation. Pivoting into cybersecurity with a hands-on, lab-first approach.
+Started from pre-5th-semester IT — Java, SQL, data mining foundation. Pivoting into cybersecurity with a hands-on, lab-first approach.
 
 ## Roadmap
 - Phase 0-1: Networking fundamentals
