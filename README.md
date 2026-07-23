@@ -10,7 +10,7 @@ Started from pre-5th-semester IT — Java, SQL, data mining foundation. Pivoting
 - Phase 2: SOC Analyst skills 
 - Phase 3: CySA+ + Threat Hunting
 - Phase 4: Red Team foundations (Purple Team bridge)
-- Phase 5: Specialization — AI/LLM Security, Cloud-Native Defense
+- Phase 5: Specialization in AI/LLM Security, Cloud-Native Defense
 
 ## Certifications
 
@@ -25,9 +25,12 @@ Started from pre-5th-semester IT — Java, SQL, data mining foundation. Pivoting
 - 🔲 Google Cybersecurity Certificate (Coursera, applying for financial aid)
 
 ## Progress Log
-- ✅ DNS: query/response structure, transaction IDs, CNAME chains, UDP vs TCP, security implications (tunneling, spoofing)
-- 🔲 Subnetting/CIDR
-- 🔲 CompTIA Security+ prep
+* Networking Fundamentals
+   - ✅ Packet structure, protocols, OSI model (L2 MAC, L3 IP, L4 ports, L7 HTTP/DNS)
+   - ✅ TCP handshake/teardown, SYN/ACK/FIN/RST flags
+   - ✅ DNS query/response, transaction IDs, CNAME chains, security implications
+   - ✅ Subnetting/CIDR — floor math, network/broadcast calculation
+* 🔲 CompTIA Security+ prep
 
 ## Tools Used
 Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos
