@@ -6,7 +6,7 @@
 - Free bits determine subnet size: 2^(free bits) = total addresses
 
 ## Key Table
-| CIDR | Free bits | Total addresses | Usable hosts |
+| CIDR | Free bits | Total addresses (2x2x2x...) | Usable hosts  |
 |------|-----------|-----------------|--------------|
 | /24  |     8     |     256         |     254      |
 | /25  |     7     |     128         |     126      |
