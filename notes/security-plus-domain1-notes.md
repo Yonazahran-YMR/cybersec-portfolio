@@ -11,8 +11,8 @@
 - **Accounting** : logging what actually happened (audit trails, logs)
 
 ## Related principles
-- **Least Privilege** — give users minimum access needed for their job, nothing more
-- **Zero Trust** — never trust, always verify — no automatic trust even inside the network
+- **Least Privilege** : give users minimum access needed for their job, nothing more
+- **Zero Trust** : never trust, always verify, no automatic trust even inside the network
 
 ## Practice scenarios covered
 - Ransomware = primarily Availability (Confidentiality too if data is stolen/leaked - "double extortion")
