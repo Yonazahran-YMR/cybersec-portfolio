@@ -29,7 +29,7 @@ Started from pre-5th-semester IT — Java, SQL, data mining foundation. Pivoting
    - ✅ Packet structure, protocols, OSI model (L2 MAC, L3 IP, L4 ports, L7 HTTP/DNS)
    - ✅ TCP handshake/teardown, SYN/ACK/FIN/RST flags
    - ✅ DNS query/response, transaction IDs, CNAME chains, security implications
-   - ✅ Subnetting/CIDR — floor math, network/broadcast calculation
+   - ✅ Subnetting/CIDR: floor math, network/broadcast calculation
 * ✅ Security+ Domain 1: CIA Triad, AAA Framework
 * ✅ Security+ Domain 1: Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors (intro)
 * 🔲 Fortinet NSE 1-3 (in progress)
