@@ -3,11 +3,11 @@
 ## Threat Actor Types
 | Type | Motivation | Skill/Resources |
 |---|---|---|
-| Nation-state / APT | Espionage, geopolitical advantage | Very high — funded, patient, custom tools |
-| Organized crime | Financial gain (ransom, extortion, fraud) | High — professional, resourced |
+| Nation-state / APT | Espionage, geopolitical advantage | Very high (funded, patient, custom tools) |
+| Organized crime | Financial gain (ransom, extortion, fraud) | High (professional, resourced) |
 | Hacktivist | Ideological/political statement | Varies |
 | Insider threat | Revenge, financial, negligence | High access (already inside), skill varies |
-| Script kiddie | Notoriety, thrill | Low — uses existing tools |
+| Script kiddie | Notoriety, thrill | Low (uses existing tools) |
 | Hacker for hire | Paid, no personal motive | Varies, often narrower job scope |
 
 ## Key Classifier: Motivation > Sophistication
