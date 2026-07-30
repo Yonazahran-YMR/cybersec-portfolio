@@ -26,7 +26,7 @@ One source port (`62072`) sent SYN packets to a large number of different destin
 ... (continues to dozens more ports)
 ```
 
-**Pattern identified:** rapid-fire SYN packets from one source to many ports, timestamps barely moving — the textbook signature of a port scan.
+**Pattern identified:** rapid-fire SYN packets from one source to many ports, timestamps barely moving.
 
 ## Open Ports Found
 
@@ -58,4 +58,4 @@ If this were an external attacker scanning a real target instead of a local self
 
 ## Key Takeaway
 
-A real port scan generates far too many packets to read line-by-line — the actual skill is recognizing the *pattern* (one source, rapid SYNs, many destination ports, mostly no replies) rather than manually inspecting every packet. In production environments, this pattern is what SIEM/IDS tools are built to auto-detect and alert on.
+A real port scan generates far too many packets to read line-by-line. The actual skill is recognizing the *pattern* (one source, rapid SYNs, many destination ports, mostly no replies) rather than manually inspecting every packet. In production environments, this pattern is what SIEM/IDS tools are built to auto-detect and alert on.
