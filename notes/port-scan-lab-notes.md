@@ -1,4 +1,4 @@
-# Port Scan Lab — nmap + Wireshark Correlation
+# Port Scan Lab (nmap + Wireshark Correlation)
 
 ## Objective
 Generate a real port scan and analyze it at the packet level to understand how this attack pattern appears in raw traffic, then correlate attacker-tool output (nmap) with defender-visible network evidence (Wireshark).
@@ -45,7 +45,7 @@ Every other port received no reply — closed or filtered. This matched nmap's o
 | Port | Service | Notes |
 |------|---------|-------|
 | 445  | SMB (Windows File Sharing) | Notorious vector for EternalBlue/WannaCry ransomware (2017) |
-| 135  | MSRPC | Windows Remote Procedure Call — internal Windows service communication |
+| 135  | MSRPC | Windows Remote Procedure Call, internal Windows service communication |
 | 3306 | MySQL | Local database service |
 
 ## Security Relevance
