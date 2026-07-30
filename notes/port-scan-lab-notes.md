@@ -38,7 +38,7 @@ Three ports replied with `[SYN, ACK]`, confirming they were open/listening:
 3306 → 62072  [SYN, ACK]
 ```
 
-Every other port received no reply — closed or filtered. This matched nmap's own summary output exactly (445, 135, 3306 listed as open), confirming the same event was correctly observed from both the attacker's tool (nmap) and the defender's packet-level view (Wireshark).
+Every other port received no reply is closed or filtered. This matched nmap's own summary output exactly (445, 135, 3306 listed as open), confirming the same event was correctly observed from both the attacker's tool (nmap) and the defender's packet-level view (Wireshark).
 
 ## What These Open Ports Mean
 
@@ -50,7 +50,7 @@ Every other port received no reply — closed or filtered. This matched nmap's o
 
 ## Security Relevance
 
-If this were an external attacker scanning a real target instead of a local self-scan, finding **445 (SMB)** and **135 (RPC)** open would be a major red flag — these are classic lateral movement and exploitation targets on Windows networks. This is why:
+If this were an external attacker scanning a real target instead of a local self-scan, finding **445 (SMB)** and **135 (RPC)** open would be a major red flag. These are classic lateral movement and exploitation targets on Windows networks. This is why:
 
 - Firewalls block inbound 445/135 from the internet by default on properly configured networks
 - SOC analysts immediately investigate any external scan that finds these ports open
