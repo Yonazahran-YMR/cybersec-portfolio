@@ -20,7 +20,6 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
 - 🔲 CompTIA CySA+
 
 ### Free supplements (in progress, no cost)
-- 🔲 Fortinet NSE 1-3
 - 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy)
 - 🔲 Google Cybersecurity Certificate (Coursera, applying for financial aid)
 
