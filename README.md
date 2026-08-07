@@ -30,8 +30,9 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
    - ✅ TCP handshake/teardown, SYN/ACK/FIN/RST flags
    - ✅ DNS query/response, transaction IDs, CNAME chains, security implications
    - ✅ Subnetting/CIDR: floor math, network/broadcast calculation
-* ✅ Security+ Domain 1: CIA Triad, AAA Framework
-* ✅ Security+ Domain 1: Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors (intro)
+* ✅ Security+ Domain 1: CIA Triad, AAA Framework, Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors
+* ✅ Security+ Domain 2 (intro): Vulnerability Types, Zero-day vs Unpatched, Vulnerability Scanning vs Pen Testing
+   - ✅ Insider Threat subtypes, Phishing/Supply Chain/Insider distinction refined
 * 🔲 Fortinet NSE 1-3 (in progress)
 * 🔲 CompTIA Security+ prep
 
