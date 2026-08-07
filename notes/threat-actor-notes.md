@@ -18,6 +18,15 @@
   - Ideology/political → Hacktivist
   - Revenge + existing access → Insider Threat
 
+## Insider Threat Subtypes
+- Malicious insider (intentional harm, knows what they're doing (e.g., planting a backdoor before quitting))
+- Negligent insider (unintentional, human error/carelessness (e.g., disabling antivirus, misconfigured cloud storage))
+
+## Distinguishing Test: Phishing vs Supply Chain vs Insider Threat
+- Phishing: individual user directly deceived via fake message/email
+- Supply chain: external attacker breaches a TRUSTED THIRD PARTY first, then pivots to the real target through that trust relationship
+- Insider threat: the person WITH legitimate access acts on their own (deliberately or negligently) — no external deception of a third party involved
+
 ## Cyber Threat Intelligence (CTI) Lifecycle
 1. Identify the most critical cyberthreats (Direction)
 2. Collect threat information (Collection)
@@ -32,10 +41,10 @@
 | Integrity | Alteration |
 | Availability | Denial |
 
-## Attack Vectors (started, continue next session)
-- Phishing — deceptive email/message
-- Unpatched vulnerabilities — exploiting known CVEs
-- Supply chain — compromising trusted third-party vendor
-- Removable media — infected USB drops
-- Default credentials — factory passwords never changed
-- Social engineering — broader than phishing, manipulates human psychology directly (e.g., vishing/phone-based pretexting)
+## Attack Vectors
+- Phishing  (deceptive email/message)
+- Unpatched vulnerabilities (exploiting known CVEs)
+- Supply chain (compromising trusted third-party vendor)
+- Removable media (infected USB drops)
+- Default credentials (factory passwords never changed)
+- Social engineering (broader than phishing, manipulates human psychology directly (e.g., vishing/phone-based pretexting))
