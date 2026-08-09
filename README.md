@@ -32,7 +32,7 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
 * ✅ Security+ Domain 1: CIA Triad, AAA Framework, Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors
 * ✅ Security+ Domain 2 (intro): Vulnerability Types, Zero-day vs Unpatched, Vulnerability Scanning vs Pen Testing
    - ✅ Insider Threat subtypes, Phishing/Supply Chain/Insider distinction refined
-* 🔲 Fortinet NSE 1-3 (in progress)
+* 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 * 🔲 CompTIA Security+ prep
 
 ## Tools Used
