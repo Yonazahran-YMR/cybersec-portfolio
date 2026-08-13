@@ -32,6 +32,9 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
 * ✅ Security+ Domain 1: CIA Triad, AAA Framework, Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors
 * ✅ Security+ Domain 2 (intro): Vulnerability Types, Zero-day vs Unpatched, Vulnerability Scanning vs Pen Testing
    - ✅ Insider Threat subtypes, Phishing/Supply Chain/Insider distinction refined
+* ✅ Cryptography: symmetric/asymmetric encryption, hashing, salting
+* ✅ Security Controls: preventive/detective/corrective/deterrent/compensating, defense in depth, residual risk
+* ✅ Hands-on: DNS tunneling pattern simulation and detection reasoning
 * 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 * 🔲 CompTIA Security+ prep
 
