@@ -38,5 +38,9 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
 * 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 * 🔲 CompTIA Security+ prep
 
+## Next Focus
+- Starting PortSwigger Web Security Academy (web app security fundamentals)
+- Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
+
 ## Tools Used
 Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos
