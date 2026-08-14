@@ -1,23 +1,26 @@
 # Cybersecurity Journey
 
-Documenting my path  in cybersecurity from zero to professional (Blue Team/SOC focus).
+Documenting my path in cybersecurity from zero to professional. Started out aiming 
+for Blue Team/SOC, recently pivoted toward GRC (Governance, Risk, Compliance).
 
 ## Background
-Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting into cybersecurity with a hands-on, lab-first approach.
+Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting into 
+cybersecurity with a hands-on, lab-first approach.
 
 ## Roadmap
 - Phase 0-1: Networking fundamentals
-- Phase 2: SOC Analyst skills 
-- Phase 3: CySA+ + Threat Hunting
-- Phase 4: Red Team foundations (Purple Team bridge)
-- Phase 5: Specialization in AI/LLM Security, Cloud-Native Defense
+- Phase 2: GRC core. Risk management, NIST CSF, ISO 27001 basics
+- Phase 3: Applied GRC. Audit/compliance mechanics, policy writing, Security+ exam
+- Phase 4: GRC certs (CGRC or CRISC) plus internship push
+- Phase 5: Specialize further (GRC leadership) or move into hybrid technical/GRC roles
+
+Technical stuff (Wireshark, hands-on labs) continues on the side at a lighter pace now, 
+more for maintaining fluency than building toward SOC specifically.
 
 ## Certifications
-
-### Target (paid, main goal)
+### Target (main goal)
 - 🔲 CompTIA Security+
-- 🔲 BTL1 (Security Blue Team Level 1)
-- 🔲 CompTIA CySA+
+- 🔲 ISC2 CGRC or ISACA CRISC (GRC-specific, later once Security+ and portfolio are solid)
 
 ### Free supplements (in progress, no cost)
 - 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy)
@@ -37,10 +40,14 @@ Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting in
 * ✅ Hands-on: DNS tunneling pattern simulation and detection reasoning
 * 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 * 🔲 CompTIA Security+ prep
+* 🔲 GRC fundamentals: risk assessment methodology, NIST CSF, ISO 27001 (starting)
 
 ## Next Focus
-- Starting PortSwigger Web Security Academy (web app security fundamentals)
-- Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
+- Starting GRC core knowledge. Risk management basics, NIST CSF
+- First GRC portfolio piece planned: sample risk assessment for a fictional company
+- Technical side is lighter pace now, still curious about PortSwigger Web Security 
+  Academy and legit bug bounty stuff (HackerOne/Intigriti) eventually, just not the 
+  priority track anymore
 
 ## Tools Used
 Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos
