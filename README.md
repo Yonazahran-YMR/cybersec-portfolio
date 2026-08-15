@@ -1,26 +1,31 @@
 # Cybersecurity Journey
 
-Documenting my path in cybersecurity from zero to professional. Started out aiming 
-for Blue Team/SOC, recently pivoted toward GRC (Governance, Risk, Compliance).
+Documenting my path in cybersecurity from zero to professional (Blue Team/SOC focus).
 
 ## Background
 Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting into 
 cybersecurity with a hands-on, lab-first approach.
 
-## Roadmap
-- Phase 0-1: Networking fundamentals
-- Phase 2: GRC core. Risk management, NIST CSF, ISO 27001 basics
-- Phase 3: Applied GRC. Audit/compliance mechanics, policy writing, Security+ exam
-- Phase 4: GRC certs (CGRC or CRISC) plus internship push
-- Phase 5: Specialize further (GRC leadership) or move into hybrid technical/GRC roles
+## Roadmap note
+Briefly considered pivoting to GRC after a rough burnout stretch. Looked into it 
+seriously (job market data, work-life balance, SOC to GRC mobility) but decided to 
+stay on the SOC/Blue Team track for now. GRC is still a real option later, once I 
+have actual technical credibility built up, since going SOC to GRC later is a much 
+easier move than the other way around. Just not the priority right now.
 
-Technical stuff (Wireshark, hands-on labs) continues on the side at a lighter pace now, 
-more for maintaining fluency than building toward SOC specifically.
+## Roadmap
+- Phase 0-1: Networking fundamentals (done)
+- Phase 2: SOC Analyst skills (current focus)
+- Phase 3: CySA+ + Threat Hunting
+- Phase 4: Red Team foundations (Purple Team bridge, optional)
+- Phase 5: Specialize into DFIR, or pivot to GRC later once technical credibility is 
+  built
 
 ## Certifications
 ### Target (main goal)
 - 🔲 CompTIA Security+
-- 🔲 ISC2 CGRC or ISACA CRISC (GRC-specific, later once Security+ and portfolio are solid)
+- 🔲 BTL1 (Security Blue Team Level 1)
+- 🔲 CompTIA CySA+
 
 ### Free supplements (in progress, no cost)
 - 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy)
@@ -38,16 +43,16 @@ more for maintaining fluency than building toward SOC specifically.
 * ✅ Cryptography: symmetric/asymmetric encryption, hashing, salting
 * ✅ Security Controls: preventive/detective/corrective/deterrent/compensating, defense in depth, residual risk
 * ✅ Hands-on: DNS tunneling pattern simulation and detection reasoning
+* ✅ Briefly explored GRC fundamentals: Risk = Likelihood x Impact, 4 treatment options 
+  (accept/mitigate/transfer/avoid) - keeping these notes since they're still useful 
+  context even on the SOC track
 * 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 * 🔲 CompTIA Security+ prep
-* 🔲 GRC fundamentals: risk assessment methodology, NIST CSF, ISO 27001 (starting)
 
 ## Next Focus
-- Starting GRC core knowledge. Risk management basics, NIST CSF
-- First GRC portfolio piece planned: sample risk assessment for a fictional company
-- Technical side is lighter pace now, still curious about PortSwigger Web Security 
-  Academy and legit bug bounty stuff (HackerOne/Intigriti) eventually, just not the 
-  priority track anymore
+- Back to SOC-focused hands-on work and Security+ prep
+- Starting PortSwigger Web Security Academy (web app security fundamentals)
+- Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
 
 ## Tools Used
 Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos
