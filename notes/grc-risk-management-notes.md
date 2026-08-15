@@ -7,8 +7,8 @@ and it's less abstract than I expected.
 
 Risk = Likelihood x Impact
 
-Likelihood - how probable is it that a threat actually exploits a vulnerability
-Impact - if it happens, how bad is the damage (financial, legal, reputational, 
+Likelihood: how probable is it that a threat actually exploits a vulnerability
+Impact: if it happens, how bad is the damage (financial, legal, reputational, 
 operational)
 
 Risk isn't binary, it's not "safe or unsafe", it's a spectrum based on these two
@@ -18,22 +18,22 @@ and everything in between.
 
 ## The risk management process, 4 steps
 
-1. Identify : find the assets, threats, and vulnerabilities (this is literally
+1. Identify: find the assets, threats, and vulnerabilities (this is literally
    everything I already covered with threat actors and vulnerability types, just
    applied differently now)
-2. Analyze : figure out likelihood and impact for each risk found
-3. Evaluate : compare against what the company considers acceptable (risk appetite)
-4. Treat : decide what to actually do about it
+2. Analyze: figure out likelihood and impact for each risk found
+3. Evaluate: compare against what the company considers acceptable (risk appetite)
+4. Treat: decide what to actually do about it
 
 ## The 4 treatment options
 
-- Accept : risk is low enough, or fixing it costs more than it's worth, just live
+- Accept: risk is low enough, or fixing it costs more than it's worth, just live
   with it
-- Mitigate : reduce likelihood or impact, doesn't eliminate the risk entirely. This
+- Mitigate: reduce likelihood or impact, doesn't eliminate the risk entirely. This
   is where basically everything I already learned plugs in - patching, MFA,
   monitoring, preventive/detective controls, all of that IS mitigation
-- Transfer : shift the risk to someone else, usually insurance or outsourcing
-- Avoid : eliminate the risk entirely by just not doing the risky thing at all
+- Transfer: shift the risk to someone else, usually insurance or outsourcing
+- Avoid: eliminate the risk entirely by just not doing the risky thing at all
 
 ## Important lesson: transfer alone isn't enough for known, fixable problems
 
