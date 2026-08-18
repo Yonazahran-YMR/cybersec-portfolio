@@ -20,9 +20,9 @@ admin login attempt from 203.0.113.5 - FAILED
 normal on the surface (a SUCCESSFUL login even), but the identity behind it is
 faked or stolen.
 ```
-Login SUCCESSFUL for 'sarah_finance' from IP 10.0.0.15 (internal)
+Login SUCCESSFUL for 'shiori_finance' from IP 10.0.0.15 (internal)
 ```
-except Sarah's badge logs show she wasn't even in the building, and her VPN
+except Shiori's badge logs show she wasn't even in the building, and her VPN
 wasn't active. Someone's using her actual credentials, or spoofing her session.
 
 The big lesson here: brute-force is LOUD and obvious in logs (tons of failures).
