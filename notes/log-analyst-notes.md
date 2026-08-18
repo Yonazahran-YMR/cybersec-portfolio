@@ -57,7 +57,7 @@ Noticed the usernames being tried weren't a real specific person, it was generic
 admin-type names (admin, administrator, root). This actually matters:
 
 - Targeted brute-force = attacker knows a specific real person's account exists,
-  focuses everything there (like the "sarah_finance" example)
+  focuses everything there (like the "shiori_finance" example)
 - Generic/scripted attack = attacker has no idea what real accounts exist, just
   throws common default names at the system hoping something sticks
 
