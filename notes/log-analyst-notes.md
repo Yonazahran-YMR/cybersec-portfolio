@@ -84,7 +84,7 @@ seconds would catch this without needing someone to manually notice it. Basicall
 automating the exact thing I just did by eye.
 
 ## Takeaway for myself
-Don't assume "all attempts failed so it's fine" - failed attempts now doesn't
+Don't assume "all attempts failed so it's fine". Failed attempts now doesn't
 mean failed forever, especially against generic account names that might actually
 exist somewhere with a weak password. Early blocking buys time to actually go
 check and fix the underlying weakness before it becomes a real breach.
