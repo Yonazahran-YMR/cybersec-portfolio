@@ -19,11 +19,11 @@ before Analysis can actually find anything meaningful in it. Dissemination is
 always last since there's no point sharing intel before it's actually been
 analyzed into something useful.
 
-This mirrors the general Intelligence Cycle used way beyond just cybersecurity -
+This mirrors the general Intelligence Cycle used way beyond just cybersecurity,
 military intel, law enforcement, corporate risk teams all follow this same basic
 structure.
 
 ## Quick test I got right
 A team with messy, uncleaned, duplicate firewall logs is stuck at the Processing
-step, not Analysis - you can't meaningfully analyze data that hasn't been
+step, not Analysis, you can't meaningfully analyze data that hasn't been
 cleaned/organized yet.
