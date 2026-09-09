@@ -56,27 +56,40 @@ built
 - ✅ Cryptography: symmetric/asymmetric encryption, hashing, salting
 - ✅ Hands-on: DNS tunneling pattern simulation and detection reasoning
 - ✅ Hands-on: Windows Event ID log analysis (4624/4625/4720/4728), full attack chain
-  brute-force to domain compromise
+brute-force to domain compromise
 - ✅ Briefly explored GRC fundamentals: Risk = Likelihood x Impact, 4 treatment options
 (accept/mitigate/transfer/avoid) - keeping these notes since they're still useful
 context even on the SOC track
-- 🔄 Security+ Domain 3: Security Architecture & Zero Trust (in progress)
-  * ✅ Control Plane vs Data Plane, PDP vs PEP
-  * ✅ Implicit trust as the core principle Zero Trust eliminates
+- ✅ Security+ Domain 3.1 (Architecture Models, fully closed)
+  * ✅ Zero Trust: Control Plane vs Data Plane, PDP vs PEP, implicit trust
   * ✅ Segmentation types: network segmentation, microsegmentation, screened subnet (DMZ), jump box/bastion host
-  * 🔲 Remaining Domain 3 topics still ahead
+  * ✅ Cloud shared responsibility model (IaaS/PaaS/SaaS)
+  * ✅ Deployment models: on-prem, hybrid, SDN, SD-WAN, SASE
+  * ✅ IaC, serverless, microservices, containerization
+- 🔄 Security+ Domain 3.2 (Secure Infrastructure, in progress)
+  * ✅ Device placement, IDS vs IPS
+  * ✅ Fail-open vs fail-closed
+  * ✅ Firewall types: packet-filtering, stateful, NGFW
+  * 🔲 Attack surface reduction, VPN, remaining infrastructure topics
 - 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 - 🔲 CompTIA Security+ prep
 
+## Portfolio Projects
+
+- ✅ **Log Parser & IOC Detection Pipeline** (`projects/log-parser-ioc-pipeline/`)
+Java + MySQL pipeline that parses log data and auto-flags brute-force patterns via
+a SQL trigger, mirrors the Windows Event ID attack chain I traced by hand earlier.
+Full write-up, schema, trigger, and sample data in the project folder.
+
 ## Next Focus
 
-- Finishing Security+ Domain 3 (Architecture, Zero Trust)
+- Finishing Security+ Domain 3.2, then remaining Domain 3 subtopics
 - Starting PortSwigger Web Security Academy (web app security fundamentals)
 - Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
 
 ## Tools Used
 
-Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos, LetsDefend (free tier)
+Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos, LetsDefend (free tier), MySQL/XAMPP, Java (VSCode)
 
 ## About
 
