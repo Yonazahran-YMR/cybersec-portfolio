@@ -1,7 +1,5 @@
 # Firewall Types (Sec+ Domain 3.2)
 
-Opened with two review scenarios on fail-open vs fail-closed from last session, since I mixed up the two on the first one. First scenario I answered as if the device was fail-closed when the prompt actually said fail-open, good reminder to double check which setting is actually stated before answering instead of just pattern matching "in-line device crash equals blocked." Second review scenario went clean, all three parts correct, so the mix-up was a one-off, not a real gap.
-
 ## The three firewall types
 
 | Type | How it inspects | Awareness level |
