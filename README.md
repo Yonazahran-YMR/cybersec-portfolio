@@ -66,11 +66,15 @@ context even on the SOC track
   * ✅ Cloud shared responsibility model (IaaS/PaaS/SaaS)
   * ✅ Deployment models: on-prem, hybrid, SDN, SD-WAN, SASE
   * ✅ IaC, serverless, microservices, containerization
-- 🔄 Security+ Domain 3.2 (Secure Infrastructure, in progress)
+- ✅ Security+ Domain 3.2 (Secure Infrastructure, fully closed)
   * ✅ Device placement, IDS vs IPS
   * ✅ Fail-open vs fail-closed
   * ✅ Firewall types: packet-filtering, stateful, NGFW
-  * 🔲 Attack surface reduction, VPN, remaining infrastructure topics
+  * ✅ VPN types: site-to-site, client-to-site, full tunnel, split tunnel
+  * ✅ Attack surface reduction
+  * ✅ Proxy (forward/reverse), WAF, UTM
+- 🔲 Security+ Domain 3.3 (Protect Data): data states, encryption, masking, tokenization, classification
+- 🔲 Security+ Domain 3.4 (Resilience & Recovery): high availability, backups, RTO/RPO
 - 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
 - 🔲 CompTIA Security+ prep
 
@@ -83,7 +87,7 @@ Full write-up, schema, trigger, and sample data in the project folder.
 
 ## Next Focus
 
-- Finishing Security+ Domain 3.2, then remaining Domain 3 subtopics
+- Security+ Domain 3.3 (Protect Data) and 3.4 (Resilience & Recovery), closing out Domain 3
 - Starting PortSwigger Web Security Academy (web app security fundamentals)
 - Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
 
