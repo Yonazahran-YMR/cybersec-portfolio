@@ -1,81 +1,44 @@
-# Custom Log Parser & IOC Detection Pipeline
+# Log Parser & IOC Detection Pipeline
 
-First real portfolio project, and it's the one I'm most excited about since it uses my Java and SQL background directly instead of just doing another guided lab. The idea was to take the brute force to persistence attack chain I traced by hand back in my log analysis session and actually build the detection logic myself instead of relying on someone else's SIEM.
+This is my first real portfolio project. I wanted something that actually used my Java and SQL background instead of just doing another guided lab, so this grew out of a session where I was manually tracing a brute force to persistence attack chain in Windows event logs. Instead of just reading the logs and spotting the pattern myself, I decided to build the detection logic and see if I could get it to catch the same thing automatically.
 
 ## What it does
 
-Takes a CSV of Windows style event logs (event_time, event_id, source_ip, account, hostname), parses it in Java, and inserts each row into a MySQL database. A SQL trigger watches every insert into the events table and automatically flags a brute force pattern, five or more failed logons (event ID 4625) from the same source IP within a 10 minute window, into a separate alerts table. No manual log review needed, the detection happens the moment the data lands.
+A Java parser reads a CSV of Windows style event logs (event_time, event_id, source_ip, account, hostname) and inserts each row into MySQL through JDBC. From there, a SQL trigger watches every insert and reacts to two patterns.
+
+1. Brute force. If it sees 5 or more failed logons (event ID 4625) from the same source IP within a 10 minute window, it fires an alert.
+2. Possible persistence. If an account that already has a brute force alert against it then shows up creating a new account (event ID 4720) within 30 minutes, that fires a second, higher severity alert. This mirrors the actual attack chain I was tracing by hand originally: brute force in, then create a new account to keep access.
+
+Detection happens the moment the data lands, no manual review needed.
+
+## Detection rules
+
+| Technique | Name | What it catches |
+|---|---|---|
+| T1110 | Brute Force | 5+ failed logons (event 4625) from the same source IP within a 10 minute window |
+| T1136 | Create Account | A new account (event 4720) created by an account that already has an active brute force alert, within 30 minutes, flagged as possible persistence |
 
 ## Stack
 
-Java for parsing and JDBC, MySQL (via XAMPP) for storage and the trigger logic. Built and tested in VSCode with the Java Extension Pack and the mysql-connector-j driver.
+Java for parsing and JDBC, MySQL (running through XAMPP) for storage and the trigger logic, built and tested in VSCode.
 
-## Schema
+## Bugs I hit (and actually learned something from)
 
-```sql
-CREATE TABLE events (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    event_time DATETIME NOT NULL,
-    event_id INT NOT NULL,
-    source_ip VARCHAR(45),
-    account VARCHAR(100),
-    hostname VARCHAR(100)
-);
+I hit the same ArrayIndexOutOfBoundsException twice while building the parser, for two completely different reasons.
 
-CREATE TABLE alerts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    triggered_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    alert_type VARCHAR(100),
-    related_account VARCHAR(100),
-    related_ip VARCHAR(45),
-    details TEXT
-);
-```
+First time it was blank lines in the CSV throwing off the column count, easy fix, just skip empty lines.
 
-## The trigger
+Second time I got the exact same error but the cause was totally different. I added a debug print to see the raw line before it broke, and the output was garbled binary data with Excel internals mixed in. Turned out my "CSV" was actually an xlsx file that had just been renamed. Lesson that stuck with me: don't trust the file extension, verify the actual format when the error doesn't match what you'd expect.
 
-```sql
-DELIMITER $$
+Later on, while adding the persistence trigger, I ran into a correlation bug that was more interesting than a crash. My first version of the persistence check matched on source_ip only, and it ended up firing a false alert for an unrelated account (svc_backup) just because it shared an IP with the actual attacker's brute forced account (jdoe). The fix was correlating on the account itself instead of the IP, since the persistence pattern I actually care about is "the compromised account creates a new account," not "any account activity from that IP." Good reminder that picking the right correlation key matters as much as the detection logic itself.
 
-CREATE TRIGGER trg_brute_force
-AFTER INSERT ON events
-FOR EACH ROW
-BEGIN
-    DECLARE fail_count INT;
+I also learned the hard way that Excel will silently reformat date values in a CSV every time you save, even with the column set to Text format, so I stopped editing the CSV in Excel entirely and just edit it directly in VSCode now.
 
-    IF NEW.event_id = 4625 THEN
-        SELECT COUNT(*) INTO fail_count
-        FROM events
-        WHERE event_id = 4625
-          AND source_ip = NEW.source_ip
-          AND event_time >= (NEW.event_time - INTERVAL 10 MINUTE)
-          AND event_time <= NEW.event_time;
+## Testing
 
-        IF fail_count >= 5 THEN
-            INSERT INTO alerts (alert_type, related_account, related_ip, details)
-            VALUES ('Brute Force Suspected', NEW.account, NEW.source_ip,
-                    CONCAT(fail_count, ' failed logons in 10 min window'));
-        END IF;
-    END IF;
-END$$
+Tested against a sample CSV with a crafted brute force pattern (5 failed logons from the same IP) mixed with normal traffic, plus a follow up account creation event from the same account, and a separate unrelated account creation event with no prior brute force. Result: the brute force alert fires once, the persistence alert fires only for the actually compromised account, and the unrelated account creation correctly produces no alert.
 
-DELIMITER ;
-```
+## Next up
 
-This is basically the exact logic I was doing manually with the 4624/4625/4720/4728 event ID chain, just automated as a database side effect now instead of me eyeballing timestamps.
-
-## Bugs I ran into (and this is honestly the part worth documenting most)
-
-First run threw an ArrayIndexOutOfBoundsException on a blank line in the CSV, an easy fix, just skip empty lines before splitting.
-
-Second run threw the same error again, but this time it wasn't blank lines. I added a debug print right before the split to log the raw line before it crashed, and the output was garbled binary data with recognizable Excel internals buried in it (workbook.xml showed up in the noise). Turned out my CSV wasn't actually a CSV, it was an xlsx file that got renamed with a .csv extension instead of properly exported. Re-saved it through File > Save As with the actual CSV format selected in Excel, and that fixed it.
-
-That debugging process taught me more than the actual coding did honestly. The lesson that stuck: don't trust a file extension, verify the actual file format when something's failing in a way that doesn't match the error you'd expect.
-
-## Result
-
-Ran the parser against a 10 row sample CSV containing a crafted brute force pattern (5 failed logons from the same IP within a few minutes, mixed with normal traffic as noise). All 10 events inserted successfully, and the trigger fired exactly as expected: one row in the alerts table, alert_type "Brute Force Suspected," correctly flagging the account and source IP with the specific fail count in the details field.
-
-## What's next
-
-Planning to extend this with chained detection, if an alert already exists for an account or IP and a new 4720 (new account creation) event follows shortly after, fire a higher severity alert for possible persistence. That would mirror the full attack chain (brute force, foothold, persistence, priv esc) I traced manually, not just the first step. Also want to stress test it against a larger set of normal, non-malicious traffic to make sure it doesn't false positive on legitimate logon patterns.
+- Password spraying detection: one failed attempt across many accounts from the same IP, a pattern my current brute force rule wouldn't catch since it only looks at repeated failures on a single account.
+- Stress test against a much larger set of normal, non malicious traffic to check for false positives at scale.
