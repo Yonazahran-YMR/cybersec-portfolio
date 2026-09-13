@@ -7,8 +7,6 @@ BEGIN
     DECLARE existing_alert INT;
     DECLARE prior_bruteforce INT;
  
-    -- Rule 1: Brute force (T1110)
-    -- 5+ failed logons (4625) from the same source IP within a 10 minute window
     IF NEW.event_id = 4625 THEN
         SELECT COUNT(*) INTO fail_count
         FROM events
@@ -30,9 +28,7 @@ BEGIN
                     'T1110', 'Brute Force');
         END IF;
     END IF;
- 
-    -- Rule 2: Possible persistence (T1136)
-    -- Same account that has an active brute force alert creates a new account (4720) within 30 minutes
+
     IF NEW.event_id = 4720 THEN
         SELECT COUNT(*) INTO prior_bruteforce
         FROM alerts
