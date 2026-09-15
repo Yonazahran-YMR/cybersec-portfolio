@@ -15,27 +15,32 @@ stay on the SOC/Blue Team track for now. GRC is still a real option later, once 
 have actual technical credibility built up, since going SOC to GRC later is a much
 easier move than the other way around. Just not the priority right now.
 
+After finishing Security+, plan is to pivot toward Cloud Security Engineer rather
+than going straight into BTL1, based on job market and salary data. BTL1 isn't
+dropped forever, just deprioritized behind a cloud cert track (likely AWS Security
+Specialty or AZ-500) once Security+ is done.
+
 ## Roadmap
 
 - Phase 0-1: Networking fundamentals (done)
 - Phase 2: SOC Analyst skills (current focus)
-- Phase 3: CySA+ + Threat Hunting
-- Phase 4: Red Team foundations (Purple Team bridge, optional)
-- Phase 5: Specialize into DFIR, or pivot to GRC later once technical credibility is
-built
+- Phase 3: Cloud security cert track (AWS/Azure) after Security+
+- Phase 4: BTL1/CySA+, deprioritized but not ruled out
+- Phase 5: Specialize into Cloud Security Engineer, or GRC later once technical
+credibility is built
 
 ## Certifications
 
 ### Target (main goal)
 
 - 🔲 CompTIA Security+
-- 🔲 BTL1 (Security Blue Team Level 1)
-- 🔲 CompTIA CySA+
+- 🔲 Cloud security cert (AWS Security Specialty or AZ-500), decision pending
+- 🔲 BTL1 (Security Blue Team Level 1), deprioritized
 
 ### Free supplements (in progress, no cost)
 
-- 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy)
-- 🔲 Google Cybersecurity Certificate (Coursera, applying for financial aid)
+- 🔲 Google Cybersecurity Professional Certificate (Coursera, requesting campus access)
+- 🔲 Google Cloud Cybersecurity Professional Certificate (Coursera, queued for after Security+)
 
 ## Progress Log
 
@@ -73,9 +78,12 @@ context even on the SOC track
   * ✅ VPN types: site-to-site, client-to-site, full tunnel, split tunnel
   * ✅ Attack surface reduction
   * ✅ Proxy (forward/reverse), WAF, UTM
-- 🔲 Security+ Domain 3.3 (Protect Data): data states, encryption, masking, tokenization, classification
-- 🔲 Security+ Domain 3.4 (Resilience & Recovery): high availability, backups, RTO/RPO
-- 🔲 Cisco Introduction to Cybersecurity (Cisco Networking Academy) prep
+- ✅ Security+ Domain 3.3 (Protect Data, fully closed)
+  * ✅ Data states: at rest, in transit, in use
+  * ✅ Protection methods: encryption, hashing, masking, tokenization
+  * ✅ Data classification (public/internal/confidential/restricted)
+  * ✅ Data sovereignty
+- 🔲 Security+ Domain 3.4 (Resilience & Recovery): high availability, backups, RTO/RPO, site considerations
 - 🔲 CompTIA Security+ prep
 
 ## Portfolio Projects
@@ -87,8 +95,9 @@ Full write-up, schema, trigger, and sample data in the project folder.
 
 ## Next Focus
 
-- Security+ Domain 3.3 (Protect Data) and 3.4 (Resilience & Recovery), closing out Domain 3
-- Starting PortSwigger Web Security Academy (web app security fundamentals)
+- Security+ Domain 3.4 (Resilience & Recovery), closing out Domain 3 entirely
+- Requesting campus Coursera access, starting Google Cybersecurity Professional Certificate alongside current study
+- Applying for SOC Analyst / Security Analyst internships next semester
 - Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
 
 ## Tools Used
