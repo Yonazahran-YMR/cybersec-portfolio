@@ -1,109 +1,29 @@
-# Cybersecurity Journey
+# Backup Types (Sec+ Domain 3.4 close-out, Domain 3 complete)
 
-Documenting my path in cybersecurity from zero to professional (Blue Team/SOC focus).
+This closes out 3.4, and with it, all of Domain 3. Opened with a review scenario on RTO/RPO and site types from last session, correctly caught that a warm site with an hours-long recovery timeline doesn't actually satisfy a 30 minute RTO requirement, which was the real point of that question, applying the mismatch instead of just accepting the label at face value.
 
-## Background
+## The three backup types
 
-Started from pre-5th-semester IT. Java, SQL, data mining foundation. Pivoting into
-cybersecurity with a hands-on, lab-first approach.
+| Type | What it backs up | Restore speed | Storage cost |
+|---|---|---|---|
+| Full backup | Everything, every time | Fastest restore, one backup to restore | Highest storage cost |
+| Incremental backup | Only what changed since the last backup (full or incremental) | Slowest restore, need full plus every incremental since | Lowest storage cost |
+| Differential backup | Only what changed since the last full backup | Medium restore, need full plus latest differential only | Medium storage cost |
 
-## Roadmap note
+## The trap that mattered most
 
-Briefly considered pivoting to GRC after a rough burnout stretch. Looked into it
-seriously (job market data, work-life balance, SOC to GRC mobility) but decided to
-stay on the SOC/Blue Team track for now. GRC is still a real option later, once I
-have actual technical credibility built up, since going SOC to GRC later is a much
-easier move than the other way around. Just not the priority right now.
+Incremental vs differential, both sound like "just the changes" but the reference point is different. Incremental only looks back to the previous backup, whatever that was, so restoring means replaying a full chain, full then incremental 1 then incremental 2 then incremental 3, in order. Differential always looks back to the last full backup, so each differential backup grows larger over time, but restoring only ever needs two pieces, the full backup plus the most recent differential, no chain to replay.
 
-After finishing Security+, plan is to pivot toward Cloud Security Engineer rather
-than going straight into BTL1, based on job market and salary data. BTL1 isn't
-dropped forever, just deprioritized behind a cloud cert track (likely AWS Security
-Specialty or AZ-500) once Security+ is done.
+## Scenario I worked through
 
-## Roadmap
+Company runs a full backup every Sunday. Monday, Tuesday, Wednesday backups each only capture changes since Sunday's full, meaning Wednesday's file is the largest of the three. Server crashes Thursday, needs restoration from Wednesday's backup.
 
-- Phase 0-1: Networking fundamentals (done)
-- Phase 2: SOC Analyst skills (current focus)
-- Phase 3: Cloud security cert track (AWS/Azure) after Security+
-- Phase 4: BTL1/CySA+, deprioritized but not ruled out
-- Phase 5: Specialize into Cloud Security Engineer, or GRC later once technical
-credibility is built
+Correctly identified this as differential, and pulled the right evidence, each backup referencing back to Sunday's full (not the previous day's backup) is the defining trait, plus the detail that Wednesday's file being the largest confirms it since differentials accumulate everything since the full over time. Correctly identified the restore only needs two files, Sunday's full plus Wednesday's differential, no chain through Monday and Tuesday needed.
 
-## Certifications
+## Status
 
-### Target (main goal)
+Domain 3.4 (resilience and recovery) is now fully closed. Covered: RTO/RPO, high availability and redundancy, site types (hot, warm, cold), and backup types (full, incremental, differential).
 
-- 🔲 CompTIA Security+
-- 🔲 Cloud security cert (AWS Security Specialty or AZ-500), decision pending
-- 🔲 BTL1 (Security Blue Team Level 1), deprioritized
+This closes Domain 3 entirely. All four subtopics done: 3.1 architecture models, 3.2 secure infrastructure, 3.3 protect data, 3.4 resilience and recovery.
 
-### Free supplements (in progress, no cost)
-
-- 🔲 Google Cybersecurity Professional Certificate (Coursera, requesting campus access)
-- 🔲 Google Cloud Cybersecurity Professional Certificate (Coursera, queued for after Security+)
-
-## Progress Log
-
-- ✅ Networking Fundamentals
-  * ✅ Packet structure, protocols, OSI model (L2 MAC, L3 IP, L4 ports, L7 HTTP/DNS)
-  * ✅ TCP handshake/teardown, SYN/ACK/FIN/RST flags
-  * ✅ DNS query/response, transaction IDs, CNAME chains, security implications
-  * ✅ Subnetting/CIDR: floor math, network/broadcast calculation
-- ✅ Security+ Domain 1: CIA Triad, AAA Framework, Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors
-- ✅ Security+ Domain 2 (fully closed)
-  * ✅ Vulnerability Types, Zero-day vs Unpatched, Vulnerability Scanning vs Pen Testing
-  * ✅ Insider Threat subtypes, Phishing/Supply Chain/Insider distinction refined
-  * ✅ Security Controls: preventive/detective/corrective/deterrent/compensating, defense in depth, residual risk
-  * ✅ Malware types by behavior (virus, worm, trojan, ransomware, rootkit, keylogger, spyware, logic bomb, bot/botnet)
-  * ✅ Indicators of Compromise (account, network, host, application based)
-  * ✅ Mitigation techniques (hardening, patch management, segmentation, compensating controls, least privilege, monitoring)
-  * ✅ Threat intel sources (OSINT, closed feeds, vulnerability databases, threat feeds, ISACs, dark web monitoring, AIS/STIX/TAXII)
-- ✅ Cryptography: symmetric/asymmetric encryption, hashing, salting
-- ✅ Hands-on: DNS tunneling pattern simulation and detection reasoning
-- ✅ Hands-on: Windows Event ID log analysis (4624/4625/4720/4728), full attack chain
-brute-force to domain compromise
-- ✅ Briefly explored GRC fundamentals: Risk = Likelihood x Impact, 4 treatment options
-(accept/mitigate/transfer/avoid) - keeping these notes since they're still useful
-context even on the SOC track
-- ✅ Security+ Domain 3.1 (Architecture Models, fully closed)
-  * ✅ Zero Trust: Control Plane vs Data Plane, PDP vs PEP, implicit trust
-  * ✅ Segmentation types: network segmentation, microsegmentation, screened subnet (DMZ), jump box/bastion host
-  * ✅ Cloud shared responsibility model (IaaS/PaaS/SaaS)
-  * ✅ Deployment models: on-prem, hybrid, SDN, SD-WAN, SASE
-  * ✅ IaC, serverless, microservices, containerization
-- ✅ Security+ Domain 3.2 (Secure Infrastructure, fully closed)
-  * ✅ Device placement, IDS vs IPS
-  * ✅ Fail-open vs fail-closed
-  * ✅ Firewall types: packet-filtering, stateful, NGFW
-  * ✅ VPN types: site-to-site, client-to-site, full tunnel, split tunnel
-  * ✅ Attack surface reduction
-  * ✅ Proxy (forward/reverse), WAF, UTM
-- ✅ Security+ Domain 3.3 (Protect Data, fully closed)
-  * ✅ Data states: at rest, in transit, in use
-  * ✅ Protection methods: encryption, hashing, masking, tokenization
-  * ✅ Data classification (public/internal/confidential/restricted)
-  * ✅ Data sovereignty
-- 🔲 Security+ Domain 3.4 (Resilience & Recovery): high availability, backups, RTO/RPO, site considerations
-- 🔲 CompTIA Security+ prep
-
-## Portfolio Projects
-
-- ✅ **Log Parser & IOC Detection Pipeline** (`projects/log-parser-ioc-pipeline/`)
-Java + MySQL pipeline that parses log data and auto-flags brute-force patterns via
-a SQL trigger, mirrors the Windows Event ID attack chain I traced by hand earlier.
-Full write-up, schema, trigger, and sample data in the project folder.
-
-## Next Focus
-
-- Security+ Domain 3.4 (Resilience & Recovery), closing out Domain 3 entirely
-- Requesting campus Coursera access, starting Google Cybersecurity Professional Certificate alongside current study
-- Applying for SOC Analyst / Security Analyst internships next semester
-- Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
-
-## Tools Used
-
-Wireshark, VirtualBox, TryHackMe (free tier), Professor Messer Videos, LetsDefend (free tier), MySQL/XAMPP, Java (VSCode)
-
-## About
-
-Documenting my personal path from zero in cybersecurity.
+Next session is a hands-on session to apply what's been covered across Domain 3, since it's been all theory for a while now.
