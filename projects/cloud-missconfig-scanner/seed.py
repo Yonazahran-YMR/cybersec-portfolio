@@ -1,4 +1,5 @@
 import boto3
+import json
 
 kw = dict(endpoint_url="http://localhost:4566", region_name="us-east-1",
           aws_access_key_id="test", aws_secret_access_key="test")
@@ -7,6 +8,8 @@ s3 = boto3.client("s3", **kw)
 ec2 = boto3.client("ec2", **kw)
 
 def seed():
+    iam = boto3.client("iam", **kw)
+
     s3.create_bucket(Bucket="bad-public-bucket")
     s3.put_bucket_acl(Bucket="bad-public-bucket", ACL="public-read")
 
@@ -43,5 +46,26 @@ def seed():
             FromPort=22,
             ToPort=22,
             CidrIp=cidr)
+
+    iam.create_policy(
+        PolicyName="bad-admin-policy",
+        PolicyDocument=json.dumps({
+            "Version": "2012-10-17",
+            "Statement": [{"Effect": "Allow", "Action": "*", "Resource": "*"}]}))
+
+    iam.create_policy(
+        PolicyName="good-readonly-policy",
+        PolicyDocument=json.dumps({
+            "Version": "2012-10-17",
+            "Statement": [{"Effect": "Allow", "Action": ["s3:GetObject"],
+                            "Resource": "arn:aws:s3:::good-private-bucket/*"}]}))
+
+    iam.create_policy(
+        PolicyName="sneaky-admin-policy",
+        PolicyDocument=json.dumps({
+            "Version": "2012-10-17",
+            "Statement": {"Effect": "Allow", "Action": ["*"], "Resource": ["*"]}}))
+
 if __name__ == "__main__":
+    seed()
     print("seeded") 
