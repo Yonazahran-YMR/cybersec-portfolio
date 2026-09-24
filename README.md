@@ -25,7 +25,7 @@ Specialty or AZ-500) once Security+ is done.
 - Phase 0-1: Networking fundamentals (done)
 - Phase 2: SOC Analyst skills (current focus)
 - Phase 3: Cloud security cert track (AWS/Azure) after Security+
-- Phase 4: BTL1/CySA+, deprioritized but not ruled out
+- Phase 4: BTL1, deprioritized but not ruled out
 - Phase 5: Specialize into Cloud Security Engineer, or GRC later once technical
 credibility is built
 
