@@ -1,0 +1,30 @@
+# OWASP Top 10
+
+## OWASP Top 10:2025 Overview
+
+OWASP just released the Top 10:2025, replacing the 2021 list. Worth knowing both versions since a lot of study material still references 2021. The shift overall is less "individual coding mistake," more "systemic failure in how apps get built and operated."
+
+| Rank | 2025 | 2021 (for comparison) |
+|---|---|---|
+| A01 | Broken Access Control | Broken Access Control (same, #1 both versions) |
+| A02 | Security Misconfiguration | Cryptographic Failures |
+| A03 | Software Supply Chain Failures | Injection |
+| A04 | Cryptographic Failures | Insecure Design |
+| A05 | Injection | Security Misconfiguration |
+| A06 | Insecure Design | Vulnerable and Outdated Components |
+| A07 | Authentication Failures | Identification and Authentication Failures |
+| A08 | Software or Data Integrity Failures | Software and Data Integrity Failures |
+| A09 | Security Logging and Alerting Failures | Security Logging and Monitoring Failures |
+| A10 | Mishandling of Exceptional Conditions | Server-Side Request Forgery (SSRF) |
+
+### What's genuinely new
+
+Software Supply Chain Failures (A03): promoted out of "Vulnerable and Outdated Components" into its own category. Reflects how much real damage comes from compromised dependencies, think SolarWinds-style attacks.
+
+Mishandling of Exceptional Conditions (A10): brand new category. Covers apps that fail unsafely, error handling that leaks sensitive info, or exception paths that skip security checks entirely.
+
+SSRF got folded out as a standalone entry, now mostly covered under Insecure Design or Broken Access Control depending on the specific case.
+
+### Next up
+
+Going category by category with scenarios, starting with A01 Broken Access Control.
