@@ -1,6 +1,6 @@
 # A10: Mishandling of Exceptional Conditions
 
-Theory notes. This is the last category of the 2025 list, and it's new this year.
+Theory notes. This is the last category of the 2025 list.
 
 ## What it actually is
 
