@@ -77,4 +77,4 @@ The 40,000 guesses actually working points to **A07 Authentication Failures**, s
 
 ## Still to do
 
-Next up is A10 Mishandling of Exceptional Conditions. The Domain 4 review quiz is still parked until I ask for it.
+Next up is A10 Mishandling of Exceptional Conditions.
