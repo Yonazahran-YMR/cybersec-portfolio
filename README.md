@@ -71,7 +71,7 @@ context even on the SOC track
   * ✅ 3.3 Protect Data: data states (rest/transit/use), protection methods (encryption, hashing, masking, tokenization), data classification, data sovereignty
   * ✅ 3.4 Resilience & Recovery: RTO/RPO, high availability/redundancy, site types (hot/warm/cold), backup types (full/incremental/differential)
 - 🔲 Security+ Domain 4 (Security Operations), not yet started
-- 🔲 CompTIA Security+ prep
+- 🔲 CompTIA Security+ prepare
 
 ## Portfolio Projects
 
