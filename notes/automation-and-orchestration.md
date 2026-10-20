@@ -1,6 +1,4 @@
-# Automation and Orchestration
-
-Theory notes. This one is a first pass, written before I tried the scenario. I'll come back tomorrow, answer the scenario questions at the bottom, and add my wrong answers and corrections to this file.
+# Automation and Orchestration 
 
 ## The big idea
 
@@ -53,11 +51,17 @@ Two more risks I want to remember that tie back to earlier topics:
 
 A practical rule: keep a **human approval step** for high impact actions (isolating a production server, disabling an executive account) and fully automate low risk, high volume ones (enriching an alert, opening a ticket).
 
-## Scenario to revisit tomorrow
+## Warm-up: what I got right and wrong
+
+1. **Control types.** SIEM rule flagging a login from two countries is detective, a firewall rule blocking traffic is preventive, restoring a server from backup after ransomware is corrective. All correct, with the right deciding factor: when the control acts relative to the incident. This was on my recurring mistakes list and it held.
+2. **One time password reset token.** I said hash, because the service only compares and nobody needs the original back. Correct. A nuance to keep: the token is long and random, so a fast hash like SHA 256 is fine. Slow hashes (bcrypt, Argon2) are for human chosen passwords, which are guessable.
+3. **OWASP check.** Item 2 (update downloaded without verifying the signature) is A08 and item 3 (regular user opens an admin page by editing the URL) is A01, both correct. Item 1 I got wrong. I said A05:2021 Security Misconfiguration for a raw SQL error shown because nothing catches the exception. Two problems. First, I was answering in the 2021 list, and my track is the 2025 list, where Security Misconfiguration is A02. Second, and more important, the category itself: the deciding phrase was "because nothing catches the exception". No setting is wrong and no debug flag is on, so the code never handled the failure and the default error page leaked the details. That's **A10 Mishandling of Exceptional Conditions**, which is new in 2025 and has no 2021 equivalent, so it's easy to miss. The test: a setting I changed or left at default means A02, code that never handles a failure means A10.
+
+## The scenario
 
 A SOC gets 900 alerts a day. For every phishing alert, an analyst manually extracts the URL, checks its reputation, deletes the email from all mailboxes, blocks the sender, and opens a ticket. It takes about 25 minutes each.
 
-Questions I need to answer tomorrow, all parts:
+Questions, all parts:
 
 1. What tool category fixes this, and what's the difference between automation and orchestration?
 2. Name two benefits.
@@ -65,7 +69,16 @@ Questions I need to answer tomorrow, all parts:
 4. Which actions would I keep behind human approval, and why?
 5. A cloud bucket that becomes public gets flipped back to private automatically within a minute. Is that a preventive, detective, or corrective control, and what would a preventive version look like? (Watch my control type mistake here. The deciding factor is when the control acts relative to the incident.)
 
-My answers and corrections go here tomorrow.
+My answers and the corrections:
+
+1. **Tool category and the difference.** I said SOAR, automation executes individual repetitive tasks without a human, orchestration connects multiple tools and workflows into one coordinated pipeline. Correct. The term I didn't use: the written response steps SOAR follows for each alert type are called a **playbook**. I'd want that word in an interview.
+2. **Two benefits.** I only gave one (efficiency and time saving). The question asked for two, so this is the fifth time a multi part question lost a part. New habit: number the lines the question asks for before sending. Good second ones for this scenario: faster reaction time (25 minutes per alert drops to seconds), consistency (every phishing alert gets the same steps), or workforce multiplier (the same team covers 900 alerts a day).
+3. **Risks of a playbook that auto isolates any host with a malware alert.** I said complexity and single point of failure. Those are real 4.7 risks, but I answered the general question instead of this specific proposal. The risks that matter here:
+   1. False positives with a big blast radius. One bad detection rule isolates many legitimate hosts in seconds, possibly including critical servers. Automation amplifies mistakes.
+   2. Attackers can abuse it. If they can trigger malware alerts on purpose, they turn my own response into a denial of service.
+   Single point of failure fits a different angle (if the SOAR platform fails, the playbook stops), so I keep it for the general question and answer the one asked.
+4. **What stays behind human approval.** I said isolating critical production servers, wiping or reimaging endpoints, and disabling core admin accounts, because false positives there cause outages or lockouts. Correct, and the deciding factor is the right one: high impact actions get a human check. Low risk, high volume steps (enriching an alert, opening a ticket, checking URL reputation) get fully automated.
+5. **Bucket flipped back to private within a minute.** I said corrective, and a preventive version would be an AWS Service Control Policy, the S3 Block Public Access account setting, or an Infrastructure as Code policy check that stops the bucket from ever becoming public. Correct, and I applied the control type taxonomy well. The gap: corrective doesn't undo what already happened. The bucket was public for up to a minute, so the follow up is to **check access logs** for anyone who read it in that window. The whole flow is actually three controls: detecting the public bucket is detective, the auto flip is corrective, and the SCP is preventive.
 
 ## Quick recap for future me
 
