@@ -12,7 +12,7 @@ Authentication answers "who are you." Access control answers "what are you allow
 | Forced browsing | Guessing hidden URLs like /admin that have no access check |
 | Tampering | Editing a cookie, JWT, or hidden form field to change your role |
 
-## Core defenses
+## Core defense
 
 1. Deny by default.
 2. Enforce checks server side on every request, never trust the client.
