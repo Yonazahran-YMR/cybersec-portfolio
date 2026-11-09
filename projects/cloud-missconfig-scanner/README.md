@@ -38,7 +38,7 @@ The part that tripped me up: AWS lets `Statement`, `Action`, and `Resource` each
 
 ## Running it
 
-You'll need Python 3 and a terminal. Commands below are for Windows cmd.
+You'll need Python 3 and a terminal. Commands below are for cmd.
 
 1. Create the environment and install dependencies:
 ```
