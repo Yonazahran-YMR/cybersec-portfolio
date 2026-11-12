@@ -71,12 +71,14 @@ Corrections to my reasoning:
 2. The role fixes how the script authenticates, and the scoped policy fixes what it may do (Get and List on that one bucket). I should name both halves.
 3. I said "automatic key rotation." Better wording: role credentials are issued by STS (Security Token Service) and expire on their own. Rotation is what I do to long term keys. A leaked admin key stays valid until someone revokes it, while a leaked role credential dies in hours.
 
-The chain for my notebook:
+The chain:
 
 1. Wrong: long term admin key in code, then public repo, then anyone can act as admin until revoked
 2. Right: VM assumes a role, STS gives temporary credentials, policy allows only Get and List on one bucket, so the leak impact is small and short
 
 Extra exam point: if the keys already leaked, the first action is to revoke and rotate them. That is a corrective control, because the damage path already exists. The preventive layer is secret scanning in the repo and a secrets manager.
+
+No multi part skip this time, and the Why had the contrast. Good.
 
 ## Quick recap for future me
 
