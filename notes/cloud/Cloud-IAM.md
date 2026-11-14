@@ -78,8 +78,6 @@ The chain:
 
 Extra exam point: if the keys already leaked, the first action is to revoke and rotate them. That is a corrective control, because the damage path already exists. The preventive layer is secret scanning in the repo and a secrets manager.
 
-No multi part skip this time, and the Why had the contrast. Good.
-
 ## Quick recap for future me
 
 | Takeaway | One liner |
