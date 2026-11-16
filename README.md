@@ -16,31 +16,30 @@ have actual technical credibility built up, since going SOC to GRC later is a mu
 easier move than the other way around. Just not the priority right now.
 
 After finishing Security+, plan is to pivot toward Cloud Security Engineer rather
-than going straight into BTL1, based on job market and salary data. BTL1 isn't
+than going straight into BTL1. BTL1 isn't
 dropped forever, just deprioritized behind a cloud cert track (likely AWS Security
 Specialty or AZ-500) once Security+ is done.
 
 ## Roadmap
 
 - Phase 0-1: Networking fundamentals (done)
-- Phase 2: SOC Analyst skills (current focus)
-- Phase 3: Cloud security cert track (AWS/Azure) after Security+
+- Phase 2: SOC Analyst skills
+- Phase 3: Cloud security foundations (current focus), then the cloud cert track (AWS/Azure) after Security+
 - Phase 4: BTL1, deprioritized but not ruled out
-- Phase 5: Specialize into Cloud Security Engineer, or GRC later once technical
-credibility is built
+- Phase 5: Specialize into Cloud Security Engineer
 
 ## Certifications
 
 ### Target (main goal)
 
-- 🔲 CompTIA Security+ (Domains 1-3 done, Domain 4 remaining)
+- 🔲 CompTIA Security+ (Domains 1-5 done, sitting the exam right after graduation)
 - 🔲 Cloud security cert (AWS Security Specialty or AZ-500), decision pending
 - 🔲 BTL1 (Security Blue Team Level 1), deprioritized
 
 ### Free supplements (in progress, no cost)
 
-- 🔲 Google Cybersecurity Professional Certificate (Coursera, requesting campus access)
-- 🔲 Google Cloud Cybersecurity Professional Certificate (Coursera, queued for after Security+)
+- ✅ Google Cybersecurity Professional Certificate (Coursera)
+- ✅ Google Cloud Cybersecurity Professional Certificate (Coursera)
 
 ## Progress Log
 
@@ -49,6 +48,7 @@ credibility is built
   * ✅ TCP handshake/teardown, SYN/ACK/FIN/RST flags
   * ✅ DNS query/response, transaction IDs, CNAME chains, security implications
   * ✅ Subnetting/CIDR: floor math, network/broadcast calculation
+  * ✅ Encapsulation and PDUs, ports and protocols, TLS handshake (certificates, forward secrecy)
 - ✅ Security+ Domain 1: CIA Triad, AAA Framework, Threat Actors, CTI Lifecycle, DAD Triad, Attack Vectors
 - ✅ Security+ Domain 2 (fully closed)
   * ✅ Vulnerability Types, Zero-day vs Unpatched, Vulnerability Scanning vs Pen Testing
@@ -70,8 +70,18 @@ context even on the SOC track
   * ✅ 3.2 Secure Infrastructure: device placement, IDS vs IPS, fail-open vs fail-closed, firewall types (packet-filtering, stateful, NGFW), VPN types, attack surface reduction, proxy (forward/reverse), WAF, UTM
   * ✅ 3.3 Protect Data: data states (rest/transit/use), protection methods (encryption, hashing, masking, tokenization), data classification, data sovereignty
   * ✅ 3.4 Resilience & Recovery: RTO/RPO, high availability/redundancy, site types (hot/warm/cold), backup types (full/incremental/differential)
-- 🔲 Security+ Domain 4 (Security Operations), not yet started
-- 🔲 CompTIA Security+ prepare
+- ✅ Security+ Domain 4 (Security Operations), fully closed
+- ✅ Security+ Domain 5 (fully closed)
+  * ✅ Third party risk, compliance and privacy, audits and assessments, security awareness
+- ✅ OWASP Top 10:2025, A01 to A10
+- 🔲 Cloud Security Foundations (in progress)
+  * ✅ Shared responsibility model (IaaS/PaaS/SaaS)
+  * ✅ Cloud IAM (principals, roles, policies, least privilege, explicit deny)
+  * ✅ Logging and monitoring (audit logs, flow logs, CloudTrail/Activity Log)
+  * ✅ Network isolation (VPC/VNet, public vs private subnets, security groups vs NACLs)
+  * 🔲 Cloud misconfiguration
+  * 🔲 AI and LLM security
+- 🔲 CompTIA Security+ prepare (gap closers in the last month: acronyms, performance based questions)
 
 ## Portfolio Projects
 
@@ -82,8 +92,9 @@ Full write-up, schema, trigger, and sample data in the project folder.
 
 ## Next Focus
 
-- Hands-on session applying Domain 3 concepts (segmentation, Zero Trust, firewalls) practically, since it's been theory-heavy for a while
-- Security+ Domain 4 (Security Operations) after that
+- Finish Cloud Security Foundations: cloud misconfiguration, then AI and LLM security
+- Hands-on cloud labs and a second portfolio project (cloud misconfiguration scanner on the AWS free tier)
+- Security+ gap closers in my last month before the exam
 - Requesting campus Coursera access, starting Google Cybersecurity Professional Certificate alongside current study
 - Applying for SOC Analyst / Security Analyst internships next semester
 - Working toward legitimate bug bounty hunting (HackerOne/Intigriti) as a longer-term goal
