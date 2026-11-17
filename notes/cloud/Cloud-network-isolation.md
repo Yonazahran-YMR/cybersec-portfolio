@@ -57,8 +57,6 @@ Exam traps:
 
 ## Warm-up: what I got right and wrong
 
-The warm-up for this session is in the Cloud Logging and Monitoring note, since both topics came from the same session.
-
 ## The scenario
 
 A company runs a web app in the cloud. The web servers must accept traffic from the internet. The database must accept connections only from the web servers and never from the internet. Which design meets this requirement?
