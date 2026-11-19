@@ -50,7 +50,7 @@ Exam traps:
 
 1. Public vs private subnet is decided by the route table, not the name.
 2. Security groups are stateful, NACLs are stateless.
-3. Only NACLs can explicitly deny. Security groups can't.
+3. Only NACLs can explicitly deny. Security groups cannot.
 4. NAT gateway is outbound only. It doesn't make a server reachable from the internet.
 5. Shared responsibility: the provider isolates the platform, but I design and configure my own VPC, subnets, and rules. A wide open security group is my misconfiguration.
 6. Least privilege applies to network rules too: never allow 0.0.0.0/0 to admin ports.
