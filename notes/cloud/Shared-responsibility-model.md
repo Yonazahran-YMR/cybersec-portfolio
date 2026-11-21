@@ -24,7 +24,7 @@ The service model changes where the line sits:
 
 Hook: the higher up the stack, the more the provider handles, but data and identity are always mine.
 
-Exam trap: "the cloud provider is secure" doesn't mean my configuration is secure. Most real cloud breaches come from customer side misconfiguration, like a public storage bucket or an over permissioned role.
+Exam trap: "the cloud provider is secure" doesn't mean my configuration is secure. Most real cloud breaches come from customer side misconfiguration, like a public storage bucket or an over permissioned roles.
 
 ## Warm-up: what I got right and wrong
 
