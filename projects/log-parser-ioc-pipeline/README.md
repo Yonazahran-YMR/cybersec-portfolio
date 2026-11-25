@@ -41,4 +41,3 @@ Tested against a sample CSV with a crafted brute force pattern (5 failed logons 
 ## Next up
 
 - Password spraying detection: one failed attempt across many accounts from the same IP, a pattern my current brute force rule wouldn't catch since it only looks at repeated failures on a single account.
-- Stress test against a much larger set of normal, non malicious traffic to check for false positives at scale.
